@@ -40,7 +40,7 @@ router.post('/', function (req, res) {
         });
 });
 
-// Question: This needs to be before GET /modules/:code, why?
+// This needs to be before GET /modules/:code
 router.get('/bulk', function (req, res) {
     const codesCsv = req.query.codes; // query parameters are strings
     const codes = codesCsv.split(',');

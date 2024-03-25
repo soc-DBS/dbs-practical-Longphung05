@@ -17,7 +17,7 @@ router.post('/table', function (req, res) {
             if (error instanceof DUPLICATE_TABLE_ERROR) {
                 return res.status(400).json({ error: error.message });
             }
-            return res.status(500).json({ error: 'Unknown Error' });
+            return res.status(500).json({ error: error.message });
         });
 });
 
@@ -36,7 +36,7 @@ router.post('/', function (req, res) {
             if (error instanceof UNIQUE_VIOLATION_ERROR) {
                 return res.status(400).json({ error: error.message });
             }
-            return res.status(500).json({ error: 'Unknown Error' });
+            return res.status(500).json({ error: error.message });
         });
 });
 
@@ -51,7 +51,7 @@ router.get('/bulk', function (req, res) {
         })
         .catch(function (error) {
             console.log(error);
-            return res.status(500).json({ error: 'Unknown Error!' });
+            return res.status(500).json({ error: error.message });
         });
 });
 
@@ -68,7 +68,7 @@ router.get('/:code', function (req, res) {
             if (error instanceof EMPTY_RESULT_ERROR) {
                 return res.status(404).json({ error: error.message });
             }
-            return res.status(500).json({ error: 'Unknown Error' });
+            return res.status(500).json({ error: error.message });
         });
 });
 
@@ -87,7 +87,7 @@ router.delete('/:code', function (req, res) {
                 // return res.status(404).json({ error: error.message });
                 return res.status(404).json({ error: "No such module!" });
             }
-            return res.status(500).json({ error: "Unknown Error" });
+            return res.status(500).json({ error: error.message });
         });
 });
 
@@ -107,7 +107,7 @@ router.put('/:code', function (req, res) {
             if (error instanceof EMPTY_RESULT_ERROR) {
                 return res.status(404).json({ error: error.message });
             }
-            return res.status(500).json({ error: "Unknown Error" });
+            return res.status(500).json({ error: error.message });
         });
 });
 
@@ -120,7 +120,7 @@ router.get('/', function (req, res) {
         })
         .catch(function (error) {
             console.error(error);
-            return res.status(500).json({ error: "Unknown Error" });
+            return res.status(500).json({ error: error.message });
         });
 });
 

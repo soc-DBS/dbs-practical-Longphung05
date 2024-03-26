@@ -19,7 +19,7 @@
 
 4. Install dependencies by running `npm install`
 
-5. Start the app by running `npm start`
+5. Start the app by running `npm start`. Alternatively to use hot reload, start the app by running `npm run dev`.
 
 6. You should see `App listening on port 3000`
 

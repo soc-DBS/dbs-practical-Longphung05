@@ -38,6 +38,9 @@ window.addEventListener('DOMContentLoaded', function () {
             const tableElement = allTableElements[i];
             tableElement.style.display = "none";
         }
+
+        errorType.textContent = "";
+        errorDetails.textContent = "";
     }
 
     clearDisplay()

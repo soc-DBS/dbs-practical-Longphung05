@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function () {
         
         // Create student object
         const student = {
-            adminNumber: adminNumber,
+            adminNumber: 'A' + adminNumber,
             studentName: studentName,
             gender: gender,
             address: address,

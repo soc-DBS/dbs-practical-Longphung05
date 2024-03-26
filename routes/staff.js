@@ -20,8 +20,7 @@ router.post('/transferStaff', (req, res) => {
             if (error instanceof RAISE_EXCEPTION) {
                 return res.status(400).json({ error: error.message });
             } 
-            console.error(error);
-            return res.status(500).send('unknown error');
+            return res.status(500).json({error: error.message});
         });
 });
 

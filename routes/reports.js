@@ -5,7 +5,7 @@ const reportsModel = require('../models/reports');
 const router = express.Router();
 
 router.get('/modulesPerformance', function(req, res) {
-    const { code } = req.query;
+    const code = req.query.code;
 
     // Generate attendance using query parameters
     return reportsModel.generateModulesPerformance( code )
@@ -14,7 +14,7 @@ router.get('/modulesPerformance', function(req, res) {
         } )
         .catch(function(error){
             console.error(error);
-            res.status(500).send('unknown error');
+            res.status(500).send({ error: error.message });
         });
 });
 
@@ -26,7 +26,7 @@ router.get('/calculateStudentsGPA', function(req, res){
         } )
         .catch(function(error){
             console.error(error);
-            res.status(500).send('unknown error');
+            res.status(500).send({error: error.message});
         });
 });
 
@@ -39,7 +39,7 @@ router.get('/modulesAttendance', function(req, res){
         })
         .catch(function(error){
             console.error(error);
-            res.status(500).send('unknown error');
+            res.status(500).send({error: error.message});
         });
 });
 

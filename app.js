@@ -5,6 +5,7 @@ const modulesRoute = require('./routes/modules');
 const reportsRoute = require('./routes/reports');
 const studentsRoute = require('./routes/students');
 const staffRoute = require('./routes/staff');
+const authRoute = require('./routes/auth');
 
 const app = express();
 app.use(express.json()); // to process JSON in request body
@@ -16,6 +17,7 @@ app.use('/modules', modulesRoute);
 app.use('/reports', reportsRoute);
 app.use('/students', studentsRoute);
 app.use('/staff', staffRoute);
+app.use('/auth', authRoute);
 
 app.use(function (req, res, next) {
     return next(createHttpError(404, `Unknown Resource ${req.method} ${req.originalUrl}`));
